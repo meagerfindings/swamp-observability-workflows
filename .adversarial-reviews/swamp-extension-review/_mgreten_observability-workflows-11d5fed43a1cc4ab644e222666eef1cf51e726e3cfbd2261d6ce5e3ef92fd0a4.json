@@ -1,14 +1,14 @@
 {
   "extension": "@mgreten/observability-workflows",
   "version": "2026.08.23.1",
-  "reviewedAt": "2026-08-23T19:47:23Z",
+  "reviewedAt": "2026-08-23T20:03:47Z",
   "dimensions": [
     { "id": "credentials-secrets", "verdict": "pass", "note": "The workflows define and persist no credentials; caller-selected models and Swamp grants own runtime capability and secret boundaries." },
     { "id": "logging-quality", "verdict": "na", "note": "Declarative workflows have no custom logger surface; Swamp records assertion, model-method, and nested-workflow lifecycle events." },
     { "id": "error-handling", "verdict": "pass", "note": "Unsafe identifiers, incomplete delivery configuration, and repeated outbox identities fail before adapter or enqueue side effects; downstream failures propagate for run resume." },
-    { "id": "testing-completeness", "verdict": "pass", "note": "Synthetic runtime evidence covers exact artifact selection, daily digest, failed and completed delivery, replay suppression, disabled delivery, two-item fan-out, malformed configuration, predicate injection, empty batches, and duplicate identities." },
+    { "id": "testing-completeness", "verdict": "pass", "note": "Synthetic runtime evidence covers exact artifact selection, daily digest, failed and completed delivery, replay suppression, disabled delivery, two-item fan-out, malformed configuration, predicate injection, empty batches, and duplicate identities. A Moment Savor swap also verified that incompatible native model protocols are rejected rather than hidden behind opaque mappings." },
     { "id": "idempotency-resilience", "verdict": "pass", "note": "The evaluator owns durable transition state, unchanged states emit no intent, batch identities are unique, and the notification outbox owns deduplication and retry state." },
-    { "id": "api-contracts", "verdict": "pass", "note": "Transition intents exactly match the notification-outbox workItem/event/urgency/era/payload contract; model and spec selectors scope every same-run handoff." },
+    { "id": "api-contracts", "verdict": "pass", "note": "Transition intents exactly match the notification-outbox contract; model/spec selectors scope every handoff, and the compatibility matrix explicitly distinguishes conforming protocols from incompatible native model schemas." },
     { "id": "resource-management", "verdict": "na", "note": "The workflows open no files or connections and directly create no provider resources." },
     { "id": "published-surface-hygiene", "verdict": "pass", "note": "README, contracts, and examples contain only generic model names, policies, and placeholder values." }
   ]
